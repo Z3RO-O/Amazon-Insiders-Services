@@ -113,7 +113,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="cta-button hover-lift border-white text-white hover:bg-white hover:text-black text-lg px-8 py-4"
+                className="cta-button hover-lift border-white text-black text-lg px-8 py-4"
                 asChild
               >
                 <Link to="/contact" className="flex items-center gap-2">
@@ -330,7 +330,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-white border-white hover:bg-white hover:text-black text-lg px-8 py-4 transition-all duration-300"
+                className="text-black border-white hover-lift text-lg px-8 py-4 transition-all duration-300"
                 asChild
               >
                 <Link to="/services" className="flex items-center gap-2">
