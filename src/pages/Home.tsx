@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import DataServices from '@/components/specific/DataServices';
 import AmazonServices from '@/components/specific/AmazonServices';
+import FeaturedServices from '@/components/specific/FeaturedServices';
+import PricingSummary from '@/components/specific/PricingSummary';
 import { 
   ShoppingCart, 
   DollarSign, 
@@ -204,76 +206,17 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Featured Services */}
+      <FeaturedServices />
+
       {/* Data Services */}
       <DataServices />
 
       {/* Amazon Services */}
       <AmazonServices />
 
-      {/* Pricing Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Outstanding <span className="text-gray-700">Pricing</span></h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <CardHeader>
-                <Badge variant="secondary" className="mb-2">#1091</Badge>
-                <CardTitle className="text-3xl font-bold text-black">$1600</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-left space-y-2 text-sm">
-                  <li>• Market: North America</li>
-                  <li>• Registration: China</li>
-                  <li>• Registration year: 2020</li>
-                  <li>• Turnover: $14,300</li>
-                  <li>• FBA orders: 1441</li>
-                  <li>• Feedback: 14 and 5 rating</li>
-                  <li>• Pro plan, without utility bill</li>
-                </ul>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center border-black border-2">
-              <CardHeader>
-                <Badge variant="default" className="mb-2 bg-black text-white">#1092</Badge>
-                <CardTitle className="text-3xl font-bold text-black">$2100</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-left space-y-2 text-sm">
-                  <li>• Market: North America</li>
-                  <li>• Registration: China</li>
-                  <li>• Registration year: 2021</li>
-                  <li>• Turnover: $45,200</li>
-                  <li>• FBA orders: 3100</li>
-                  <li>• Feedback: 35 and 5 rating</li>
-                  <li>• Pro plan, without utility bill</li>
-                </ul>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center">
-              <CardHeader>
-                <Badge variant="secondary" className="mb-2">#1093</Badge>
-                <CardTitle className="text-3xl font-bold text-black">$2700</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="text-left space-y-2 text-sm">
-                  <li>• Market: North America</li>
-                  <li>• Registration: China</li>
-                  <li>• Registration year: 2020</li>
-                  <li>• Turnover: $155,200</li>
-                  <li>• FBA orders: 6500</li>
-                  <li>• Feedback: 129 and 5 rating</li>
-                  <li>• Pro plan, without utility bill</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      {/* Pricing Summary */}
+      <PricingSummary />
 
       {/* Stats Section */}
       <section className="py-20 bg-black text-white relative overflow-hidden">

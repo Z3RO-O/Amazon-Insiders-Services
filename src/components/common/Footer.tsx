@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">sellamzacc.com</h3>
+            <h3 className="text-xl font-bold mb-4">AMZ Insiders Services</h3>
             <div className="space-y-2 text-gray-300">
               <p>Live Chat Support</p>
               <p className="text-sm">7*24H online chat</p>
@@ -38,11 +38,12 @@ const Footer = () => {
                   <Link to="/services">Amazon Service</Link>
                 </Button>
               </div>
-              <div>
+              {/* Hide blog button for now */}
+              {/* <div>
                 <Button variant="ghost" size="sm" asChild className="justify-start p-0 h-auto text-gray-300 hover:text-white font-normal">
                   <Link to="/blog">Amz blog</Link>
                 </Button>
-              </div>
+              </div> */}
             </div>
           </div>
           
@@ -55,7 +56,7 @@ const Footer = () => {
               <p>Our Location</p>
               <p className="text-sm">3649 Lafayette Rd, IN</p>
               <p>Booking Now</p>
-              <p className="text-sm">support@sellamzacc.com</p>
+              <p className="text-sm">support@amzinsiders.com</p>
             </div>
           </div>
           
@@ -76,7 +77,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>Copyright © 2025 sellamzacc.com</p>
+          <p>Copyright © 2025 AMZ Insiders Services For Amazon Seller</p>
         </div>
       </div>
     </footer>

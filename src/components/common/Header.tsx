@@ -19,7 +19,7 @@ const Header = () => {
               </div>
               <div className="flex items-center gap-2 hover:text-white transition-colors">
                 <Mail className="w-4 h-4" />
-                <span>support@sellamzacc.com</span>
+                <span>support@amzinsiders.com</span>
               </div>
               <div className="flex items-center gap-2 hover:text-white transition-colors">
                 <MessageCircle className="w-4 h-4 animate-pulse" />
@@ -35,7 +35,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <Button variant="ghost" asChild className="p-0 hover:bg-transparent">
             <Link to="/" className="text-2xl font-bold text-black hover:text-gray-700 transition-colors duration-200">
-              sellamzacc.com
+              AMZ Insiders Services
             </Link>
           </Button>
           
@@ -58,12 +58,13 @@ const Header = () => {
                 Amazon Service
               </Link>
             </Button>
-            <Button variant="ghost" asChild>
+            {/* Hide blog button for now */}
+            {/* <Button variant="ghost" asChild>
               <Link to="/blog" className="flex items-center gap-2 group">
                 <BookOpen className="w-4 h-4 group-hover:animate-pulse" />
                 Amz blog
               </Link>
-            </Button>
+            </Button> */}
           </nav>
           
           <div className="flex items-center gap-4">
@@ -123,7 +124,8 @@ const Header = () => {
                   Amazon Service
                 </Link>
               </Button>
-              <Button variant="ghost" asChild className="justify-start">
+              {/* Hide blog button for now */}
+              {/* <Button variant="ghost" asChild className="justify-start">
                 <Link 
                   to="/blog"
                   className="flex items-center gap-2"
@@ -132,7 +134,7 @@ const Header = () => {
                   <BookOpen className="w-4 h-4" />
                   Amz blog
                 </Link>
-              </Button>
+              </Button> */}
               <Button 
                 className="mt-2 bg-black text-white hover:bg-gray-800"
                 asChild
