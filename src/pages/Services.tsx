@@ -286,17 +286,6 @@ const Services = () => {
                       <Shield className="h-4 w-4 text-primary" />
                       <span className="text-sm font-medium text-primary">{service.guarantee}</span>
                     </div>
-
-                    {/* CTA Button */}
-                    <Button 
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-all duration-300 hover:scale-105"
-                      asChild
-                    >
-                      <a href="mailto:support@amzinsiders.com" className="flex items-center justify-center gap-2">
-                        <MessageCircle className="w-4 h-4" />
-                        Request This Service
-                      </a>
-                    </Button>
                   </CardContent>
                 </Card>
               );
@@ -317,13 +306,13 @@ const Services = () => {
               tailored to your Amazon business goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                variant="secondary" 
+              <Button
+                size="lg"
+                variant="secondary"
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-4"
                 asChild
               >
-                <a href="mailto:support@amzinsiders.com" className="flex items-center gap-2">
+                <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
                   Contact Us Now
                   <ArrowRight className="w-5 h-5" />

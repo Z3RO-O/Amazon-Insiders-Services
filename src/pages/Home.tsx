@@ -3,16 +3,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { serviceCategories } from '@/data/services';
-import { 
-  Shield, 
-  Award, 
-  TrendingUp, 
-  Star, 
-  Users, 
-  CheckCircle, 
+import SnowEffect from '@/components/common/SnowEffect';
+import {
+  Shield,
+  Award,
+  TrendingUp,
+  Star,
+  Users,
+  CheckCircle,
   ArrowRight,
   Sparkles,
-  Target,
   Clock,
   MessageCircle
 } from 'lucide-react';
@@ -22,6 +22,9 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground py-24">
+        {/* Interactive Snow Animation */}
+        <SnowEffect />
+
         {/* Animated background */}
         <div className="absolute inset-0 bg-gradient-to-r from-muted/30 to-muted/10 animate-gradient"></div>
         <div className="absolute top-10 left-10 w-72 h-72 bg-primary-foreground/5 rounded-full blur-3xl animate-float"></div>
@@ -61,13 +64,13 @@ const Home = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                size="lg" 
-                variant="secondary" 
+              <Button
+                size="lg"
+                variant="secondary"
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-4"
                 asChild
               >
-                <a href="mailto:support@amzinsiders.com" className="flex items-center gap-2">
+                <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MessageCircle className="w-5 h-5" />
                   Get Started Now
                   <ArrowRight className="w-5 h-5" />
@@ -160,17 +163,6 @@ const Home = () => {
                           <span className="text-sm font-medium text-primary">{service.guarantee}</span>
                         </div>
                       )}
-                      
-                      <Button 
-                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-all duration-300 hover:scale-105"
-                        asChild
-                      >
-                        <a href="mailto:support@amzinsiders.com" className="flex items-center justify-center gap-2">
-                          <Target className="w-4 h-4" />
-                          Order Now
-                          <ArrowRight className="w-4 h-4" />
-                        </a>
-                      </Button>
                     </CardContent>
                   </Card>
                 );
@@ -219,13 +211,13 @@ const Home = () => {
             <p className="text-xl mb-8 text-primary-foreground/90">
               We work in partnership with all the <em className="font-semibold">Amazon sellers</em>
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary" 
+            <Button
+              size="lg"
+              variant="secondary"
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-4"
               asChild
             >
-              <a href="mailto:support@amzinsiders.com" className="flex items-center gap-2">
+              <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <MessageCircle className="w-5 h-5" />
                 Contact Us Now
                 <ArrowRight className="w-5 h-5" />

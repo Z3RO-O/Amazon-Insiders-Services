@@ -267,52 +267,31 @@ export const amazonReviewServices: ServiceItem[] = [
 ];
 
 // Additional Services
-// export const additionalServices: ServiceItem[] = [
-//   {
-//     id: 'ecommerce-website',
-//     title: 'Make E-commerce Website with Your Own Brand',
-//     description: 'Complete e-commerce website development with your own branding and custom features.',
-//     price: '$400 - $5,000',
-//     priceRange: 'Based on complexity',
-//     timeframe: '2-4 weeks',
-//     icon: Globe,
-//     color: 'from-cyan-500 to-cyan-600',
-//     category: 'general',
-//     featured: true
-//   },
-//   {
-//     id: 'withdraw-funds-blocked',
-//     title: 'Withdraw Funds from Blocked Account',
-//     description: 'Professional service to help withdraw detained funds from blocked Amazon accounts.',
-//     price: '25% of funds',
-//     timeframe: '1-2 weeks',
-//     icon: DollarSign,
-//     color: 'from-green-500 to-green-600',
-//     category: 'amazon-internal',
-//     featured: true
-//   },
-//   {
-//     id: 'back-down-competitors',
-//     title: 'Back Down Competitors',
-//     description: 'Strategic service to handle competitor attacks and protect your market position.',
-//     price: '$350',
-//     timeframe: '3-7 days',
-//     icon: Shield,
-//     color: 'from-red-500 to-red-600',
-//     category: 'amazon-internal'
-//   },
-//   {
-//     id: 'usps-tracking',
-//     title: 'USPS/UPS Tracking Service',
-//     description: 'Professional tracking service for safe delivery and product protection.',
-//     price: '$200 - $800',
-//     priceRange: 'Based on service level',
-//     timeframe: 'Ongoing',
-//     icon: Truck,
-//     color: 'from-blue-500 to-blue-600',
-//     category: 'general'
-//   }
-// ];
+export const additionalServices: ServiceItem[] = [
+  {
+    id: 'withdraw-funds-blocked',
+    title: 'Withdraw Funds by block Amazon/eBay/Walmart account',
+    description: 'Professional service to help withdraw detained funds from blocked Amazon, eBay, and Walmart accounts with secure processing.',
+    price: '25% of amount',
+    timeframe: '1-2 weeks',
+    icon: Shield,
+    color: 'from-green-500 to-green-600',
+    category: 'amazon-internal',
+    featured: true
+  },
+  {
+    id: 'amazon-reinstate-service',
+    title: 'Amazon Reinstate Service',
+    description: 'Professional Amazon account reinstatement service with high success rate and comprehensive appeal process.',
+    price: '$350 - $600',
+    priceRange: 'Based on complexity',
+    timeframe: '5-10 days',
+    icon: RefreshCw,
+    color: 'from-blue-500 to-blue-600',
+    category: 'amazon-internal',
+    featured: true
+  }
+];
 
 // Amazon Reports Services
 export const amazonReportsServices: ServiceItem[] = [
@@ -486,7 +465,7 @@ export const serviceCategories: ServiceCategory[] = [
     title: 'Amazon Internal Services',
     description: 'Advanced internal Amazon services for account management and optimization',
     icon: Settings,
-    services: [...amazonInternalServices, ...amazonInternalAdvancedServices, ...amazonReportsServices.filter(s => s.category === 'amazon-internal')]
+    services: [...amazonInternalServices, ...amazonInternalAdvancedServices, ...additionalServices, ...amazonReportsServices.filter(s => s.category === 'amazon-internal')]
   },
   {
     id: 'amazon-reviews',
@@ -508,14 +487,7 @@ export const serviceCategories: ServiceCategory[] = [
     description: 'Complete eBay account management and reinstatement services',
     icon: RefreshCw,
     services: ebayServices
-  },
-  // {
-  //   id: 'general',
-  //   title: 'General Services',
-  //   description: 'Additional services for e-commerce business growth',
-  //   icon: Globe,
-  //   services: additionalServices.filter(s => s.category === 'general')
-  // }
+  }
 ];
 
 // All services combined
@@ -524,7 +496,7 @@ export const allServices: ServiceItem[] = [
   ...amazonInternalAdvancedServices,
   ...amazonReviewServices,
   ...amazonReportsServices,
-  // ...additionalServices,
+  ...additionalServices,
   ...ebayServices
 ];
 
@@ -535,8 +507,13 @@ export const featuredServices: ServiceItem[] = allServices.filter(service => ser
 export const paymentSupport = {
   title: 'Payment Support Station',
   description: 'We provide 2D/3D/5D payment supported. All types payment system available.',
-  methods: ['2D Payment', '3D Payment', '5D Payment', 'All Payment Systems'],
-  availability: '24/7 Support Available'
+  methods: ['2D Payment', '3D Payment', '5D Payment', 'All Payment Systems', 'Crypto Currency'],
+  availability: '24/7 Support Available',
+  cryptoInfo: {
+    title: 'Crypto Currency Payment Method',
+    binanceId: '1045910133',
+    description: 'Secure and fast cryptocurrency payments accepted via Binance'
+  }
 };
 
 // Contact information
@@ -555,7 +532,7 @@ export default {
   amazonInternalAdvancedServices,
   amazonReviewServices,
   amazonReportsServices,
-  // additionalServices,
+  additionalServices,
   ebayServices,
   paymentSupport,
   contactInfo

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Clock, Mail, MessageCircle, Menu, X, ShoppingCart, Settings } from 'lucide-react';
+import { Clock, MessageCircle, Menu, X, ShoppingCart, Settings, Send, Smartphone, CreditCard } from 'lucide-react';
 import { useState } from 'react';
 
 const Header = () => {
@@ -15,16 +15,35 @@ const Header = () => {
             <div className="flex flex-wrap items-center gap-6 text-gray-300">
               <div className="flex items-center gap-2 hover:text-white transition-colors">
                 <Clock className="w-4 h-4" />
-                <span>8:00AM - 6:00PM Mon-Sat</span>
+                <span>24/7 Support Available</span>
               </div>
-              <div className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="w-4 h-4" />
-                <span>support@amzinsiders.com</span>
-              </div>
-              <div className="flex items-center gap-2 hover:text-white transition-colors">
-                <MessageCircle className="w-4 h-4 animate-pulse" />
-                <span className="font-medium">Online 24x7 telegram: @agedamzaccount</span>
-              </div>
+              <a
+                href="https://t.me/Insideamz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-300 hover:text-blue-400 transition-colors duration-200"
+              >
+                <Send className="w-4 h-4" />
+                <span>Telegram</span>
+              </a>
+              <a
+                href="https://wa.me/+18658880593"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition-colors duration-200"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="weixin://dl/chat?team-reviwer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-300 hover:text-green-500 transition-colors duration-200"
+              >
+                <Smartphone className="w-4 h-4" />
+                <span>WeChat</span>
+              </a>
             </div>
           </div>
         </div>
@@ -52,14 +71,31 @@ const Header = () => {
                 Service Examples
               </Link>
             </Button>
+            <Button
+              variant="ghost"
+              onClick={() => {
+                // Smooth scroll to payment card section
+                const paymentCard = document.querySelector('[data-payment-card]');
+                if (paymentCard) {
+                  paymentCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                  // Fallback: scroll to bottom where payment card is located
+                  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }
+              }}
+              className="flex items-center gap-2 group"
+            >
+              <CreditCard className="w-4 h-4 group-hover:animate-pulse" />
+              Payment Mode
+            </Button>
           </nav>
           
           <div className="flex items-center gap-4">
-            <Button 
+            <Button
               className="hidden md:flex bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               asChild
             >
-              <a href="mailto:support@amzinsiders.com" className="flex items-center gap-2">
+              <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4" />
                 Contact us
               </a>
@@ -92,7 +128,7 @@ const Header = () => {
                 </Link>
               </Button>
               <Button variant="ghost" asChild className="justify-start">
-                <Link 
+                <Link
                   to="/services"
                   className="flex items-center gap-2"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -101,11 +137,31 @@ const Header = () => {
                   Service Examples
                 </Link>
               </Button>
-              <Button 
+              <Button
+                variant="ghost"
+                className="justify-start"
+                onClick={() => {
+                  // Smooth scroll to payment card section
+                  const paymentCard = document.querySelector('[data-payment-card]');
+                  if (paymentCard) {
+                    paymentCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  } else {
+                    // Fallback: scroll to bottom where payment card is located
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                  }
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <CreditCard className="w-4 h-4" />
+                  Payment Mode
+                </div>
+              </Button>
+              <Button
                 className="mt-2 bg-black text-white hover:bg-gray-800"
                 asChild
               >
-                <a href="mailto:support@amzinsiders.com" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                   Contact us
                 </a>
               </Button>
