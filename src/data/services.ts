@@ -4,15 +4,12 @@ import {
   Shield, 
   Ban, 
   Merge, 
-  DollarSign, 
   BarChart3,
   FileText,
   Search,
   TrendingUp,
   Star,
   MessageSquare,
-  Globe,
-  Truck,
   RefreshCw,
   AlertTriangle,
   CheckCircle,
@@ -32,6 +29,7 @@ export interface ServiceItem {
   price: string;
   priceRange?: string;
   timeframe: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   color: string;
   category: 'amazon-internal' | 'amazon-reviews' | 'amazon-reports' | 'ebay' | 'general';
@@ -43,6 +41,7 @@ export interface ServiceCategory {
   id: string;
   title: string;
   description: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   icon: any;
   services: ServiceItem[];
 }
@@ -268,52 +267,52 @@ export const amazonReviewServices: ServiceItem[] = [
 ];
 
 // Additional Services
-export const additionalServices: ServiceItem[] = [
-  {
-    id: 'ecommerce-website',
-    title: 'Make E-commerce Website with Your Own Brand',
-    description: 'Complete e-commerce website development with your own branding and custom features.',
-    price: '$400 - $5,000',
-    priceRange: 'Based on complexity',
-    timeframe: '2-4 weeks',
-    icon: Globe,
-    color: 'from-cyan-500 to-cyan-600',
-    category: 'general',
-    featured: true
-  },
-  {
-    id: 'withdraw-funds-blocked',
-    title: 'Withdraw Funds from Blocked Account',
-    description: 'Professional service to help withdraw detained funds from blocked Amazon accounts.',
-    price: '25% of funds',
-    timeframe: '1-2 weeks',
-    icon: DollarSign,
-    color: 'from-green-500 to-green-600',
-    category: 'amazon-internal',
-    featured: true
-  },
-  {
-    id: 'back-down-competitors',
-    title: 'Back Down Competitors',
-    description: 'Strategic service to handle competitor attacks and protect your market position.',
-    price: '$350',
-    timeframe: '3-7 days',
-    icon: Shield,
-    color: 'from-red-500 to-red-600',
-    category: 'amazon-internal'
-  },
-  {
-    id: 'usps-tracking',
-    title: 'USPS/UPS Tracking Service',
-    description: 'Professional tracking service for safe delivery and product protection.',
-    price: '$200 - $800',
-    priceRange: 'Based on service level',
-    timeframe: 'Ongoing',
-    icon: Truck,
-    color: 'from-blue-500 to-blue-600',
-    category: 'general'
-  }
-];
+// export const additionalServices: ServiceItem[] = [
+//   {
+//     id: 'ecommerce-website',
+//     title: 'Make E-commerce Website with Your Own Brand',
+//     description: 'Complete e-commerce website development with your own branding and custom features.',
+//     price: '$400 - $5,000',
+//     priceRange: 'Based on complexity',
+//     timeframe: '2-4 weeks',
+//     icon: Globe,
+//     color: 'from-cyan-500 to-cyan-600',
+//     category: 'general',
+//     featured: true
+//   },
+//   {
+//     id: 'withdraw-funds-blocked',
+//     title: 'Withdraw Funds from Blocked Account',
+//     description: 'Professional service to help withdraw detained funds from blocked Amazon accounts.',
+//     price: '25% of funds',
+//     timeframe: '1-2 weeks',
+//     icon: DollarSign,
+//     color: 'from-green-500 to-green-600',
+//     category: 'amazon-internal',
+//     featured: true
+//   },
+//   {
+//     id: 'back-down-competitors',
+//     title: 'Back Down Competitors',
+//     description: 'Strategic service to handle competitor attacks and protect your market position.',
+//     price: '$350',
+//     timeframe: '3-7 days',
+//     icon: Shield,
+//     color: 'from-red-500 to-red-600',
+//     category: 'amazon-internal'
+//   },
+//   {
+//     id: 'usps-tracking',
+//     title: 'USPS/UPS Tracking Service',
+//     description: 'Professional tracking service for safe delivery and product protection.',
+//     price: '$200 - $800',
+//     priceRange: 'Based on service level',
+//     timeframe: 'Ongoing',
+//     icon: Truck,
+//     color: 'from-blue-500 to-blue-600',
+//     category: 'general'
+//   }
+// ];
 
 // Amazon Reports Services
 export const amazonReportsServices: ServiceItem[] = [
@@ -487,7 +486,7 @@ export const serviceCategories: ServiceCategory[] = [
     title: 'Amazon Internal Services',
     description: 'Advanced internal Amazon services for account management and optimization',
     icon: Settings,
-    services: [...amazonInternalServices, ...amazonInternalAdvancedServices, ...amazonReportsServices.filter(s => s.category === 'amazon-internal'), ...additionalServices.filter(s => s.category === 'amazon-internal')]
+    services: [...amazonInternalServices, ...amazonInternalAdvancedServices, ...amazonReportsServices.filter(s => s.category === 'amazon-internal')]
   },
   {
     id: 'amazon-reviews',
@@ -510,13 +509,13 @@ export const serviceCategories: ServiceCategory[] = [
     icon: RefreshCw,
     services: ebayServices
   },
-  {
-    id: 'general',
-    title: 'General Services',
-    description: 'Additional services for e-commerce business growth',
-    icon: Globe,
-    services: additionalServices.filter(s => s.category === 'general')
-  }
+  // {
+  //   id: 'general',
+  //   title: 'General Services',
+  //   description: 'Additional services for e-commerce business growth',
+  //   icon: Globe,
+  //   services: additionalServices.filter(s => s.category === 'general')
+  // }
 ];
 
 // All services combined
@@ -525,7 +524,7 @@ export const allServices: ServiceItem[] = [
   ...amazonInternalAdvancedServices,
   ...amazonReviewServices,
   ...amazonReportsServices,
-  ...additionalServices,
+  // ...additionalServices,
   ...ebayServices
 ];
 
@@ -556,7 +555,7 @@ export default {
   amazonInternalAdvancedServices,
   amazonReviewServices,
   amazonReportsServices,
-  additionalServices,
+  // additionalServices,
   ebayServices,
   paymentSupport,
   contactInfo

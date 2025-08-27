@@ -11,7 +11,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">AMZ Insiders Services</h3>
             <div className="space-y-2 text-gray-300">
               <p>Live Chat Support</p>
-              <p className="text-sm">7*24H online chat</p>
+              <p className="text-sm">24/7 online chat</p>
               <p>Send Ticket</p>
               <p className="text-sm">Left your message</p>
               <p>Guarantee</p>

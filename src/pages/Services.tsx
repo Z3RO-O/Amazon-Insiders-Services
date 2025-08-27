@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { featuredServices, amazonInternalAdvancedServices, amazonReviewServices, amazonReportsServices } from '@/data/services';
 import { 
   Shield, 
   Star, 
@@ -9,12 +8,8 @@ import {
   ArrowRight, 
   MessageCircle,
   Crown,
-  Sparkles,
   BarChart3,
-  Award,
-  DollarSign,
   Clock,
-  Target,
   Zap,
   TrendingUp,
   Eye,
@@ -182,9 +177,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="space-y-16">
+    <div>
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+      <section className="pt-20 px-4 bg-gradient-to-b from-background to-muted/20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
             <div className="flex items-center justify-center gap-3 mb-4">
@@ -279,19 +274,10 @@ const Services = () => {
 
                     {/* Service Details */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border">
-                      <div className="flex items-center gap-2">
-                        <DollarSign className="w-4 h-4 text-primary" />
-                        <div>
-                          <div className="text-sm text-muted-foreground">Price</div>
-                          <div className="font-semibold text-primary">{service.price}</div>
-                        </div>
-                      </div>
+                      <div className="font-semibold text-primary">{service.price}</div>
                       <div className="flex items-center gap-2">
                         <Clock className="w-4 h-4 text-primary" />
-                        <div>
-                          <div className="text-sm text-muted-foreground">Delivery</div>
-                          <div className="font-semibold">{service.deliveryTime}</div>
-                        </div>
+                        <div className="font-semibold">{service.deliveryTime}</div>
                       </div>
                     </div>
 
@@ -309,7 +295,6 @@ const Services = () => {
                       <a href="mailto:support@amzinsiders.com" className="flex items-center justify-center gap-2">
                         <MessageCircle className="w-4 h-4" />
                         Request This Service
-                        <ArrowRight className="w-4 h-4" />
                       </a>
                     </Button>
                   </CardContent>

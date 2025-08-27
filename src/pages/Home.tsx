@@ -2,12 +2,9 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { allServices, serviceCategories } from '@/data/services';
+import { serviceCategories } from '@/data/services';
 import { 
-  ShoppingCart, 
-  DollarSign, 
   Shield, 
-  Zap, 
   Award, 
   TrendingUp, 
   Star, 
@@ -16,15 +13,13 @@ import {
   ArrowRight,
   Sparkles,
   Target,
-  Crown,
-  Rocket,
   Clock,
   MessageCircle
 } from 'lucide-react';
 
 const Home = () => {
   return (
-    <div className="space-y-16">
+    <div>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary text-primary-foreground py-24">
         {/* Animated background */}
@@ -35,17 +30,13 @@ const Home = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="p-3 bg-primary-foreground/10 rounded-full">
-                <Crown className="h-8 w-8 text-primary-foreground" />
-              </div>
-              <Badge variant="secondary" className="bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Professional Amazon Services
-              </Badge>
+              <Sparkles className="w-4 h-4" />
+              Professional Amazon Services
+              <Sparkles className="w-4 h-4" />
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Amazon Seller Account Services
+              AMZ Insiders Services For Amazon Seller
             </h1>
             
             <p className="text-xl mb-8 text-primary-foreground/80 leading-relaxed max-w-4xl mx-auto">
@@ -85,7 +76,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-4"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-4 bg-transparent"
                 asChild
               >
                 <Link to="/services" className="flex items-center gap-2">
@@ -114,7 +105,7 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className={`grid gap-6 ${category.services.length === 1 ? 'grid-cols-1 justify-items-center max-w-md mx-auto' : category.services.length === 2 ? 'grid-cols-1 md:grid-cols-2 justify-items-center max-w-2xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
               {category.services.map((service, index) => {
                 const IconComponent = service.icon;
                 return (
@@ -155,7 +146,6 @@ const Home = () => {
                       
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          <DollarSign className="w-4 h-4 text-primary" />
                           <span className="font-bold text-primary">{service.price}</span>
                         </div>
                         <div className="flex items-center gap-2 text-muted-foreground">
@@ -207,7 +197,7 @@ const Home = () => {
                 <Users className="w-6 h-6" />
                 <h3 className="text-3xl font-bold">24</h3>
               </div>
-              <p className="text-primary-foreground/80 font-medium">7*24H Online Support</p>
+              <p className="text-primary-foreground/80 font-medium">24/7 Online Support</p>
             </div>
             <div className="animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-200">
               <div className="flex items-center justify-center gap-2 mb-4">
