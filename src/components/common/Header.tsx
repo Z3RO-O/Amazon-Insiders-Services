@@ -41,30 +41,17 @@ const Header = () => {
           
           <nav className="hidden lg:flex space-x-2">
             <Button variant="ghost" asChild>
-              <Link to="/buy-account" className="flex items-center gap-2 group">
+              <Link to="/" className="flex items-center gap-2 group">
                 <ShoppingCart className="w-4 h-4 group-hover:animate-bounce" />
-                Buy Amazon Seller Account
-              </Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link to="/sell-account" className="flex items-center gap-2 group">
-                <DollarSign className="w-4 h-4 group-hover:animate-bounce" />
-                Sell Amazon Seller Account
+                Services & Accounts
               </Link>
             </Button>
             <Button variant="ghost" asChild>
               <Link to="/services" className="flex items-center gap-2 group">
                 <Settings className="w-4 h-4 group-hover:animate-spin" />
-                Amazon Service
+                Service Examples
               </Link>
             </Button>
-            {/* Hide blog button for now */}
-            {/* <Button variant="ghost" asChild>
-              <Link to="/blog" className="flex items-center gap-2 group">
-                <BookOpen className="w-4 h-4 group-hover:animate-pulse" />
-                Amz blog
-              </Link>
-            </Button> */}
           </nav>
           
           <div className="flex items-center gap-4">
@@ -72,10 +59,10 @@ const Header = () => {
               className="hidden md:flex bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               asChild
             >
-              <Link to="/contact" className="flex items-center gap-2">
+              <a href="mailto:support@amzinsiders.com" className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4" />
                 Contact us
-              </Link>
+              </a>
             </Button>
             
             {/* Mobile menu button */}
@@ -96,22 +83,12 @@ const Header = () => {
             <nav className="flex flex-col space-y-2 pt-4">
               <Button variant="ghost" asChild className="justify-start">
                 <Link 
-                  to="/buy-account"
+                  to="/"
                   className="flex items-center gap-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <ShoppingCart className="w-4 h-4" />
-                  Buy Amazon Seller Account
-                </Link>
-              </Button>
-              <Button variant="ghost" asChild className="justify-start">
-                <Link 
-                  to="/sell-account"
-                  className="flex items-center gap-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <DollarSign className="w-4 h-4" />
-                  Sell Amazon Seller Account
+                  Services & Accounts
                 </Link>
               </Button>
               <Button variant="ghost" asChild className="justify-start">
@@ -121,27 +98,16 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Settings className="w-4 h-4" />
-                  Amazon Service
+                  Service Examples
                 </Link>
               </Button>
-              {/* Hide blog button for now */}
-              {/* <Button variant="ghost" asChild className="justify-start">
-                <Link 
-                  to="/blog"
-                  className="flex items-center gap-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <BookOpen className="w-4 h-4" />
-                  Amz blog
-                </Link>
-              </Button> */}
               <Button 
                 className="mt-2 bg-black text-white hover:bg-gray-800"
                 asChild
               >
-                <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="mailto:support@amzinsiders.com" onClick={() => setIsMobileMenuOpen(false)}>
                   Contact us
-                </Link>
+                </a>
               </Button>
             </nav>
           </div>

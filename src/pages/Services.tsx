@@ -1,367 +1,357 @@
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import DataServices from '@/components/specific/DataServices';
-import AmazonServices from '@/components/specific/AmazonServices';
-import { serviceCategories, paymentSupport, contactInfo } from '@/data/services';
+import { Button } from '@/components/ui/button';
+import { featuredServices, amazonInternalAdvancedServices, amazonReviewServices, amazonReportsServices } from '@/data/services';
 import { 
-  Crown, 
-  Sparkles, 
-  Rocket, 
   Shield, 
-  Zap, 
+  Star, 
   CheckCircle, 
-  ArrowRight,
-  Target,
+  ArrowRight, 
+  MessageCircle,
+  Crown,
+  Sparkles,
   BarChart3,
-  Settings,
-  Clock,
+  Award,
   DollarSign,
-  Star,
-  CreditCard,
-  Phone
+  Clock,
+  Target,
+  Zap,
+  TrendingUp,
+  Eye,
+  RefreshCw
 } from 'lucide-react';
 
 const Services = () => {
+  const serviceExamples = [
+    {
+      id: 'aged-account-example',
+      category: 'Amazon Accounts',
+      title: 'Aged Amazon Seller Account Example',
+      icon: Crown,
+      description: 'Professional aged Amazon seller account with complete history and performance metrics.',
+      features: [
+        'Account Age: 2-5 years established',
+        'Clean performance metrics with no suspensions',
+        'Verified business information and documents',
+        'Previous sales history available for review',
+        'All necessary verifications completed',
+        'Ready for immediate use with FBA/FBM'
+      ],
+      advantages: [
+        'Higher trust level with Amazon algorithms',
+        'Better chance of winning buy box',
+        'Faster approval for new product categories',
+        'Lower risk of account suspension',
+        'Established seller reputation'
+      ],
+      price: '$1,500 - $5,000',
+      deliveryTime: '24-48 hours',
+      guarantee: '30-day money-back guarantee',
+      popular: true
+    },
+    {
+      id: 'review-service-example',
+      category: 'Review Services',
+      title: 'Amazon Verified Review Service Example',
+      icon: Star,
+      description: 'Professional Amazon review service with verified purchase reviews from real customers.',
+      features: [
+        'Verified purchase reviews only',
+        'Real customer accounts (not bots)',
+        'Natural review posting timeline',
+        'Detailed product feedback',
+        'Photo and video reviews available',
+        'Multiple marketplace coverage'
+      ],
+      advantages: [
+        'Improves product visibility and ranking',
+        'Increases conversion rates',
+        'Builds customer trust and credibility',
+        'Helps with Amazon SEO optimization',
+        'Competitive advantage in marketplace'
+      ],
+      price: '$200 per review package',
+      deliveryTime: '5-10 business days',
+      guarantee: 'Review replacement if removed',
+      popular: true
+    },
+    {
+      id: 'hack-service-example',
+      category: 'Growth Services',
+      title: 'Amazon Business Growth Service Example',
+      icon: Zap,
+      description: 'Comprehensive Amazon business optimization and growth acceleration service.',
+      features: [
+        'Keyword optimization and SEO',
+        'Listing optimization for conversion',
+        'PPC campaign setup and management',
+        'Inventory management consultation',
+        'Competitor analysis and strategy',
+        'Performance monitoring and reporting'
+      ],
+      advantages: [
+        'Rapid business growth and scaling',
+        'Professional optimization strategies',
+        'Data-driven decision making',
+        'Competitive market positioning',
+        'ROI improvement and profit maximization'
+      ],
+      price: '$500 - $2,000/month',
+      deliveryTime: 'Ongoing service',
+      guarantee: 'Performance improvement guarantee',
+      popular: false
+    },
+    {
+      id: 'reports-example',
+      category: 'Analytics & Reports',
+      title: 'Amazon Business Reports Example',
+      icon: BarChart3,
+      description: 'Detailed Amazon business analytics and performance reports for data-driven decisions.',
+      features: [
+        'Sales performance analytics',
+        'Keyword performance tracking',
+        'Competitor analysis reports',
+        'PPC campaign performance',
+        'Customer behavior insights',
+        'Market trend analysis'
+      ],
+      advantages: [
+        'Data-driven business decisions',
+        'Performance optimization insights',
+        'Competitive advantage through analytics',
+        'ROI tracking and improvement',
+        'Strategic planning support'
+      ],
+      price: '$100 - $500 per report',
+      deliveryTime: '2-5 business days',
+      guarantee: 'Accurate data guarantee',
+      popular: false
+    },
+    {
+      id: 'hijacker-removal-example',
+      category: 'Protection Services',
+      title: 'Hijacker Removal Service Example',
+      icon: Shield,
+      description: 'Professional service to remove unauthorized sellers from your product listings.',
+      features: [
+        'Unauthorized seller identification',
+        'Amazon policy violation reporting',
+        'Brand protection enforcement',
+        'Legal documentation support',
+        'Continuous monitoring service',
+        'Fast resolution process'
+      ],
+      advantages: [
+        'Protects brand integrity and pricing',
+        'Maintains exclusive buy box control',
+        'Prevents counterfeit product sales',
+        'Preserves customer experience',
+        'Safeguards business revenue'
+      ],
+      price: '$180 per removal',
+      deliveryTime: '1-2 business days',
+      guarantee: '30-day protection guarantee',
+      popular: false
+    },
+    {
+      id: 'account-reinstatement-example',
+      category: 'Recovery Services',
+      title: 'Account Reinstatement Service Example',
+      icon: RefreshCw,
+      description: 'Professional Amazon account reinstatement service for suspended accounts.',
+      features: [
+        'Suspension reason analysis',
+        'Professional appeal letter writing',
+        'Plan of action development',
+        'Documentation preparation',
+        'Direct Amazon communication',
+        'Follow-up and support'
+      ],
+      advantages: [
+        'Higher success rate than DIY appeals',
+        'Professional communication with Amazon',
+        'Faster reinstatement process',
+        'Comprehensive problem resolution',
+        'Prevention of future suspensions'
+      ],
+      price: '$300 - $800',
+      deliveryTime: '5-14 business days',
+      guarantee: 'No success, no payment',
+      popular: false
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
-        {/* Hero Section */}
-        <div className="text-center mb-16 animate-slideUp">
-          <Badge variant="outline" className="mb-4 px-6 py-2 text-black border-gray-300">
-            <Settings className="w-4 h-4 mr-2" />
-            Professional Services
-          </Badge>
-          <h1 className="text-5xl font-bold mb-6">
-            Amazon <span className="text-gray-700">Services</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive Amazon seller services designed to boost your business performance, 
-            from account management to advanced data analytics and growth optimization.
-          </p>
-        </div>
-
-        {/* Service Categories */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          <Card className="text-center hover-lift group border border-gray-200 shadow-lg bg-white animate-scaleIn">
-            <CardHeader className="pb-4">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Crown className="w-8 h-8 text-white" />
+    <div className="space-y-16">
+      {/* Hero Section */}
+      <section className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Eye className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle className="text-2xl font-bold text-black">Account Services</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Buy and sell aged Amazon seller accounts with full verification, 
-                health checks, and secure transfer processes.
-              </p>
-              <div className="flex items-center justify-center gap-2 text-green-600 font-semibold mb-4">
-                <CheckCircle className="w-4 h-4" />
-                <span>Verified & Secure</span>
-              </div>
-              <Button 
-                className="w-full bg-black text-white hover:bg-gray-800 cta-button"
-                asChild
-              >
-                <Link to="/buy-account" className="flex items-center justify-center gap-2">
-                  <Target className="w-4 h-4" />
-                  View Accounts
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-          
-          <Card className="text-center hover-lift group border border-gray-200 shadow-lg bg-white animate-scaleIn" style={{animationDelay: '0.1s'}}>
-            <CardHeader className="pb-4">
-              <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <BarChart3 className="w-8 h-8 text-white" />
-              </div>
-              <CardTitle className="text-2xl font-bold text-black">Data Analytics</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Professional data analysis including ASIN reports, CPC analysis, 
-                and comprehensive performance insights.
-              </p>
-              <div className="flex items-center justify-center gap-2 text-black font-semibold mb-4">
-                <Sparkles className="w-4 h-4" />
-                <span>Advanced Analytics</span>
-              </div>
-              <Button 
-                className="w-full bg-gray-800 text-white hover:bg-gray-700 cta-button"
-                asChild
-              >
-                <Link to="/#data-services" className="flex items-center justify-center gap-2">
-                  <BarChart3 className="w-4 h-4" />
-                  View Analytics
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-          
-          <Card className="text-center hover-lift group border border-gray-200 shadow-lg bg-white animate-scaleIn" style={{animationDelay: '0.2s'}}>
-            <CardHeader className="pb-4">
-              <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-8 h-8 text-white" />
-              </div>
-              <CardTitle className="text-2xl font-bold text-black">Growth Services</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Advanced Amazon optimization including listing management, 
-                review handling, and business growth strategies.
-              </p>
-              <div className="flex items-center justify-center gap-2 text-black font-semibold mb-4">
-                <Zap className="w-4 h-4" />
-                <span>Business Growth</span>
-              </div>
-              <Button 
-                className="w-full bg-gray-600 text-white hover:bg-gray-500 cta-button"
-                asChild
-              >
-                <Link to="/#amazon-services" className="flex items-center justify-center gap-2">
-                  <Rocket className="w-4 h-4" />
-                  View Services
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Why Choose Us */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg mb-12">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6">Why Choose Our Services?</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We provide professional Amazon seller services with years of experience and proven results
+              <span className="text-lg font-semibold">Service Examples</span>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold mb-6">
+              Detailed Service Examples & Case Studies
+            </h1>
+            <p className="text-base text-muted-foreground max-w-4xl mx-auto">
+              Explore detailed examples of our Amazon services to understand exactly what you'll receive. 
+              Each service includes comprehensive features, clear advantages, and guaranteed results.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-black">100% Secure</h3>
-              <p className="text-gray-600 text-sm">All transactions and transfers are completely secure and verified</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-black">Fast Delivery</h3>
-              <p className="text-gray-600 text-sm">Quick turnaround times for all our services and accounts</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-black">Verified Quality</h3>
-              <p className="text-gray-600 text-sm">All accounts and services are thoroughly tested and verified</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Sparkles className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-black">24/7 Support</h3>
-              <p className="text-gray-600 text-sm">Round-the-clock customer support via chat and email</p>
-            </div>
-          </div>
         </div>
+      </section>
 
-        {/* CTA Section */}
-        <div className="bg-black text-white rounded-2xl p-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Grow Your Amazon Business?</h2>
-          <p className="text-xl mb-8 text-gray-300">
-            Get started with our professional Amazon services today and see the difference
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              variant="secondary" 
-              className="cta-button hover-lift bg-white text-black hover:bg-gray-100 text-lg px-8 py-4"
-              asChild
-            >
-              <Link to="/contact" className="flex items-center gap-2">
-                <Target className="w-5 h-5" />
-                Get Started Now
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="text-white border-white hover:bg-white hover:text-black text-lg px-8 py-4 transition-all duration-300"
-              asChild
-            >
-              <Link to="/buy-account" className="flex items-center gap-2">
-                <Crown className="w-5 h-5" />
-                Browse Accounts
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Comprehensive Services Catalog */}
-      <div className="mb-20">
-        <div className="text-center mb-16 animate-slideUp">
-          <Badge variant="outline" className="mb-4 px-6 py-2 text-black border-gray-300">
-            <Settings className="w-4 h-4 mr-2" />
-            Complete Service Catalog
-          </Badge>
-          <h2 className="text-5xl font-bold mb-6 text-black">
-            🔥🔥 <span className="text-gray-700">AMZ Insiders Services For Amazon Seller</span> 🔥🔥
-          </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Comprehensive Amazon seller services with competitive pricing and guaranteed results
-          </p>
-        </div>
-
-        {serviceCategories.map((category, categoryIndex) => (
-          <div key={category.id} className="mb-16">
-            <div className="text-center mb-12">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-                  <category.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-black">{category.title}</h3>
-              </div>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">{category.description}</p>
-              <Separator className="mt-6 max-w-xs mx-auto" />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {category.services.map((service, index) => {
-                const IconComponent = service.icon;
-                return (
-                  <Card key={service.id} className="hover-lift group border border-gray-200 shadow-lg bg-white animate-scaleIn" style={{animationDelay: `${(categoryIndex * 0.1) + (index * 0.05)}s`}}>
-                    <CardHeader className="pb-4">
-                      <div className={`w-14 h-14 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="w-7 h-7 text-white" />
+      {/* Service Examples */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {serviceExamples.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <Card 
+                  key={service.id} 
+                  className="h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:scale-[1.02] group animate-in fade-in-0 slide-in-from-bottom-4 relative" 
+                  style={{animationDelay: `${index * 0.1}s`}}
+                >
+                  {service.popular && (
+                    <div className="absolute top-4 right-4 z-10">
+                      <Badge className="bg-primary text-primary-foreground">
+                        <Star className="w-3 h-3 mr-1" />
+                        Popular
+                      </Badge>
+                    </div>
+                  )}
+                  
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-3 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <IconComponent className="h-6 w-6 text-primary" />
                       </div>
-                      <div className="flex items-center justify-between">
-                        <CardTitle className="text-lg font-bold text-black group-hover:text-gray-700 transition-colors">
+                      <div className="flex-1">
+                        <Badge variant="outline" className="mb-2 text-xs">
+                          {service.category}
+                        </Badge>
+                        <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">
                           {service.title}
                         </CardTitle>
-                        {service.featured && (
-                          <Badge variant="default" className="bg-black text-white text-xs">
-                            <Star className="w-3 h-3 mr-1" />
-                            Featured
-                          </Badge>
-                        )}
                       </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                        {service.description}
-                      </p>
-                      {service.advantage && (
-                        <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                          <span className="font-semibold text-gray-800">Advantage:</span> {service.advantage}
-                        </p>
-                      )}
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2">
-                          <DollarSign className="w-4 h-4 text-green-600" />
-                          <span className="font-bold text-green-600 text-lg">{service.price}</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-500">
-                          <Clock className="w-4 h-4" />
-                          <span className="text-sm">{service.timeframe}</span>
+                    </div>
+                    <p className="text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </CardHeader>
+                  
+                  <CardContent className="flex-1 space-y-6">
+                    {/* Service Features */}
+                    <div>
+                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                        <CheckCircle className="h-4 w-4 text-primary" />
+                        What's Included
+                      </h4>
+                      <ul className="space-y-2">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Service Advantages */}
+                    <div>
+                      <h4 className="font-semibold mb-3 flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-primary" />
+                        Key Benefits
+                      </h4>
+                      <ul className="space-y-2">
+                        {service.advantages.map((advantage, idx) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></div>
+                            {advantage}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Service Details */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-border">
+                      <div className="flex items-center gap-2">
+                        <DollarSign className="w-4 h-4 text-primary" />
+                        <div>
+                          <div className="text-sm text-muted-foreground">Price</div>
+                          <div className="font-semibold text-primary">{service.price}</div>
                         </div>
                       </div>
-                      {service.priceRange && (
-                        <p className="text-xs text-gray-500 mb-3">{service.priceRange}</p>
-                      )}
-                      {service.guarantee && (
-                        <div className="mb-3 p-2 bg-green-100 rounded-lg flex items-center gap-2">
-                          <Shield className="w-4 h-4 text-green-600" />
-                          <span className="text-sm font-semibold text-green-800">{service.guarantee}</span>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-primary" />
+                        <div>
+                          <div className="text-sm text-muted-foreground">Delivery</div>
+                          <div className="font-semibold">{service.deliveryTime}</div>
                         </div>
-                      )}
-                      <Button 
-                        size="sm" 
-                        className="w-full bg-black text-white hover:bg-gray-800 text-sm"
-                        asChild
-                      >
-                        <Link to="/contact" className="flex items-center justify-center gap-2">
-                          <Target className="w-4 h-4" />
-                          Order Now
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+                      </div>
+                    </div>
+
+                    {/* Guarantee */}
+                    <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm border rounded-lg px-3 py-2">
+                      <Shield className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-medium text-primary">{service.guarantee}</span>
+                    </div>
+
+                    {/* CTA Button */}
+                    <Button 
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-all duration-300 hover:scale-105"
+                      asChild
+                    >
+                      <a href="mailto:support@amzinsiders.com" className="flex items-center justify-center gap-2">
+                        <MessageCircle className="w-4 h-4" />
+                        Request This Service
+                        <ArrowRight className="w-4 h-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <div className="animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
+              Contact our team to discuss your specific needs and get a customized service package 
+              tailored to your Amazon business goals.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-4"
+                asChild
+              >
+                <a href="mailto:support@amzinsiders.com" className="flex items-center gap-2">
+                  <MessageCircle className="w-5 h-5" />
+                  Contact Us Now
+                  <ArrowRight className="w-5 h-5" />
+                </a>
+              </Button>
+              <div className="flex items-center gap-2 text-primary-foreground/80">
+                <Clock className="w-4 h-4" />
+                <span className="text-sm">Response within 24 hours</span>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
-
-      {/* Payment Support Section */}
-      <div className="bg-white rounded-2xl p-8 shadow-lg mb-12">
-        <div className="text-center mb-8">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-              <CreditCard className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-3xl font-bold text-black">{paymentSupport.title}</h3>
-          </div>
-          <p className="text-lg text-gray-600 mb-6">{paymentSupport.description}</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {paymentSupport.methods.map((method, index) => (
-              <Badge key={index} variant="outline" className="px-4 py-2 text-black border-gray-300">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                {method}
-              </Badge>
-            ))}
-          </div>
-          <p className="text-sm text-green-600 font-semibold mt-4">{paymentSupport.availability}</p>
         </div>
-      </div>
-
-      {/* Contact Support Section */}
-      <div className="bg-black text-white rounded-2xl p-8 text-center mb-12">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-            <Phone className="w-6 h-6 text-black" />
-          </div>
-          <h3 className="text-3xl font-bold">{contactInfo.support}</h3>
-        </div>
-        <p className="text-xl mb-6 text-gray-300">{contactInfo.availability}</p>
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          {contactInfo.channels.map((channel, index) => (
-            <Badge key={index} variant="secondary" className="px-4 py-2 bg-white text-black">
-              {channel}
-            </Badge>
-          ))}
-        </div>
-        <Button 
-          size="lg" 
-          variant="secondary" 
-          className="cta-button hover-lift bg-white text-black hover:bg-gray-100 text-lg px-8 py-4"
-          asChild
-        >
-          <Link to="/contact" className="flex items-center gap-2">
-            <Phone className="w-5 h-5" />
-            Contact Us Now
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-        </Button>
-      </div>
-
-      {/* Include service sections */}
-      <DataServices />
-      <AmazonServices />
+      </section>
     </div>
   );
 };
