@@ -36,19 +36,24 @@ const OrderForm: React.FC<OrderFormProps> = ({ serviceName, servicePrice, childr
   };
 
   const generateWhatsAppMessage = () => {
-    const baseMessage = `Hello! I would like to order the following service:
-    Service: ${serviceName}
-    ${servicePrice ? `Price: ${servicePrice}` : ''}
+    const baseMessage = `Hello, I would like to inquire about your services and would like to place an order.
 
-    Customer Details:
-    • Name: ${formData.name}
-    • Email: ${formData.email}
+*Service Details:*
+_Service:_ ${serviceName}
+${servicePrice ? `_Price:_ ${servicePrice}` : ''}
 
-    ${formData.message ? `Additional Message:\n${formData.message}` : ''}
+*Customer Details:*
+_Name:_ ${formData.name}
+_Email:_ ${formData.email}
 
-    Please provide me with the next steps to proceed with this order.
+${formData.message ? `*Additional Message:* ${formData.message}` : ''}
 
-    Thank you!`;
+Could you please provide me with the next steps to proceed with this order?
+
+Thank you for your time.
+
+Best regards,
+_${formData.name}_`;
 
     return encodeURIComponent(baseMessage);
   };

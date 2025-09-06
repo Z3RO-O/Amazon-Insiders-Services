@@ -20,9 +20,9 @@ import {
 const Services = () => {
   const serviceExamples = [
     {
-      id: 'aged-account-example',
+      id: 'aged-account',
       category: 'Amazon Accounts',
-      title: 'Aged Amazon Seller Account Example',
+      title: 'Aged Amazon Seller Account',
       icon: Crown,
       description:
         'Professional aged Amazon seller account with complete history and performance metrics.',
@@ -47,9 +47,9 @@ const Services = () => {
       popular: true
     },
     {
-      id: 'review-service-example',
+      id: 'review-service',
       category: 'Review Services',
-      title: 'Amazon Verified Review Service Example',
+      title: 'Amazon Verified Review Service',
       icon: Star,
       description:
         'Professional Amazon review service with verified purchase reviews from real customers.',
@@ -74,9 +74,9 @@ const Services = () => {
       popular: true
     },
     {
-      id: 'hack-service-example',
+      id: 'hack-service',
       category: 'Growth Services',
-      title: 'Amazon Business Growth Service Example',
+      title: 'Amazon Business Growth Service',
       icon: Zap,
       description: 'Comprehensive Amazon business optimization and growth acceleration service.',
       features: [
@@ -100,9 +100,9 @@ const Services = () => {
       popular: false
     },
     {
-      id: 'reports-example',
+      id: 'reports',
       category: 'Analytics & Reports',
-      title: 'Amazon Business Reports Example',
+      title: 'Amazon Business Reports',
       icon: BarChart3,
       description:
         'Detailed Amazon business analytics and performance reports for data-driven decisions.',
@@ -127,9 +127,9 @@ const Services = () => {
       popular: false
     },
     {
-      id: 'hijacker-removal-example',
+      id: 'hijacker-removal',
       category: 'Protection Services',
-      title: 'Hijacker Removal Service Example',
+      title: 'Hijacker Removal Service',
       icon: Shield,
       description:
         'Professional service to remove unauthorized sellers from your product listings.',
@@ -154,9 +154,9 @@ const Services = () => {
       popular: false
     },
     {
-      id: 'account-reinstatement-example',
+      id: 'account-reinstatement',
       category: 'Recovery Services',
-      title: 'Account Reinstatement Service Example',
+      title: 'Account Reinstatement Service',
       icon: RefreshCw,
       description: 'Professional Amazon account reinstatement service for suspended accounts.',
       features: [
