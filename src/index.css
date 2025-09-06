@@ -52,6 +52,10 @@
   --sidebar-ring: oklch(0.704 0.04 256.788);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-width: 320px;
@@ -352,4 +356,72 @@ h1 {
 
 .to-muted\/10 {
   --tw-gradient-to: hsl(var(--muted) / 0.1);
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Liquid spill animation enhancement */
+@keyframes liquidSpill {
+  0% {
+    clip-path: circle(0% at 100% 0%);
+    opacity: 0;
+  }
+  30% {
+    clip-path: circle(30% at 100% 0%);
+    opacity: 0.7;
+  }
+  60% {
+    clip-path: circle(80% at 100% 0%);
+    opacity: 0.9;
+  }
+  100% {
+    clip-path: circle(150% at 100% 0%);
+    opacity: 1;
+  }
+}
+
+.liquid-spill-effect {
+  animation: liquidSpill 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Professional arrow hover effect */
+@keyframes arrowPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(22.5deg);
+  }
+}
+
+.arrow-pulse {
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+/* Smooth text color transitions */
+.text-transition {
+  transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced card hover effects */
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }

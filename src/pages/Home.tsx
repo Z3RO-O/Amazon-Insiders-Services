@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { serviceCategories } from '@/data/services';
 import SnowEffect from '@/components/common/SnowEffect';
 import OrderForm from '@/components/common/OrderForm';
+import ServicesCarousel from '@/components/common/ServicesCarousel';
 import {
   Shield,
   Award,
@@ -102,10 +103,14 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Services Carousel */}
+      <ServicesCarousel />
+
       {/* Service Categories */}
       {serviceCategories.map((category, categoryIndex) => (
         <section
           key={category.id}
+          id={category.id}
           className={`py-20 px-4 ${categoryIndex % 2 === 0 ? 'bg-gradient-to-b from-background to-muted/20' : 'bg-gradient-to-r from-muted/30 to-muted/10'}`}
         >
           <div className="container mx-auto px-4">
