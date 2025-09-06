@@ -1,69 +1,126 @@
-# React + TypeScript + Vite
+# Amazon Insiders Services
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
 
-Currently, two official plugins are available:
+Amazon Insiders Services is a modern web application built with React, TypeScript, and Vite. It serves as a platform to showcase and interact with various services, featuring a responsive UI with components for service browsing, ordering forms, payment simulations, and more. The app utilizes Tailwind CSS for styling, Radix UI for accessible components, Embla Carousel for sliders, and Framer Motion for animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key features include:
 
-## Expanding the ESLint configuration
+- Home and Services pages
+- Interactive service carousel
+- Order form and payment card components
+- Whatsapp Message Generation on Submitting Order form
+- Snow effect and go-to-top functionality
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project demonstrates best practices in React development with a focus on user experience and performance.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Folder Structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked
+The project is organized as follows:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname
-      }
-      // other options...
-    }
-  }
-]);
+```
+Amazon-Insiders-Services/
+├── components.json
+├── eslint.config.js
+├── index.html
+├── node_modules/
+├── package-lock.json
+├── package.json
+├── public/
+│   └── icon.svg
+├── README.md
+├── src/
+│   ├── App.tsx
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Footer.tsx
+│   │   │   ├── GoToTop.tsx
+│   │   │   ├── Header.tsx
+│   │   │   ├── OrderForm.tsx
+│   │   │   ├── PaymentCard.tsx
+│   │   │   ├── ServicesCarousel.tsx
+│   │   │   └── SnowEffect.tsx
+│   │   ├── specific/
+│   │   └── ui/
+│   │       ├── badge.tsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── carousel.tsx
+│   │       ├── dialog.tsx
+│   │       ├── input.tsx
+│   │       ├── separator.tsx
+│   │       └── textarea.tsx
+│   ├── data/
+│   │   └── services.ts
+│   ├── index.css
+│   ├── lib/
+│   │   └── utils.ts
+│   ├── main.tsx
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   └── Services.tsx
+│   └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── vercel.json
+└── vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This structure separates concerns: UI components in `components/ui`, shared components in `components/common`, pages in `pages`, and data/utilities in their respective folders.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## How to Run Locally
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname
-      }
-      // other options...
-    }
-  }
-]);
-```
+To run this project on your local machine, follow these steps:
+
+### Prerequisites
+
+- Node.js (version 16 or higher)
+- npm (comes with Node.js)
+
+### Installation
+
+1. Clone the repository:
+
+   ```
+   git clone https://github.com/your-username/amazon-insiders-services.git
+   cd amazon-insiders-services
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+### Running the App
+
+- Start the development server:
+
+  ```
+  npm run dev
+  ```
+
+  The app will be available at `http://localhost:5173` (or the port specified in the console).
+
+- Build for production:
+
+  ```
+  npm run build
+  ```
+
+- Preview the production build:
+
+  ```
+  npm run preview
+  ```
+
+- Run linting:
+  ```
+  npm run lint
+  ```
+
+## Development Notes
+
+This project uses Vite for fast development with HMR. It includes ESLint for code quality. For expanding the ESLint configuration, refer to the original Vite template documentation.
+
+If you encounter any issues, ensure your Node.js version is compatible and try deleting `node_modules` and reinstalling.

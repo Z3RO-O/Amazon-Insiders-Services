@@ -111,7 +111,7 @@ const Home = () => {
         <section
           key={category.id}
           id={category.id}
-          className={`py-20 px-4 ${categoryIndex % 2 === 0 ? 'bg-gradient-to-b from-background to-muted/20' : 'bg-gradient-to-r from-muted/30 to-muted/10'}`}
+          className={`py-16 px-4 ${categoryIndex % 2 === 0 ? 'bg-gradient-to-b from-background to-muted/20' : 'bg-gradient-to-r from-muted/30 to-muted/10'}`}
         >
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
