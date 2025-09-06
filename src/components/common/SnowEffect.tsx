@@ -50,11 +50,10 @@ const SnowEffect = () => {
 
     // Animation loop
     const animate = () => {
-      snowflakesRef.current = snowflakesRef.current.map(snowflake => {
+      snowflakesRef.current = snowflakesRef.current.map((snowflake) => {
         // Calculate distance to mouse
         const distance = Math.sqrt(
-          Math.pow(snowflake.x - mousePosition.x, 2) +
-          Math.pow(snowflake.y - mousePosition.y, 2)
+          Math.pow(snowflake.x - mousePosition.x, 2) + Math.pow(snowflake.y - mousePosition.y, 2)
         );
 
         // Deflection radius (pixels)
@@ -107,11 +106,8 @@ const SnowEffect = () => {
   }, [mousePosition]);
 
   return (
-    <div
-      ref={containerRef}
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-    >
-      {snowflakes.map(snowflake => (
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none">
+      {snowflakes.map((snowflake) => (
         <div
           key={snowflake.id}
           className="absolute text-white opacity-20 select-none pointer-events-none"

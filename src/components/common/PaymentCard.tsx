@@ -52,11 +52,7 @@ const PaymentCard = () => {
                     }`}
                     title={copied ? 'Copied!' : 'Copy to clipboard'}
                   >
-                    {copied ? (
-                      <Check className="w-5 h-5" />
-                    ) : (
-                      <Copy className="w-5 h-5" />
-                    )}
+                    {copied ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
                   </button>
                 </div>
 
@@ -71,7 +67,6 @@ const PaymentCard = () => {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

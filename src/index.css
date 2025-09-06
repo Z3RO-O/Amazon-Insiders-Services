@@ -17,7 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --radius: 0.625rem;
-  
+
   /* Design System Colors - Light Mode */
   --background: oklch(1 0 0);
   --foreground: oklch(0.205 0 0);
@@ -202,7 +202,8 @@ h1 {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -284,7 +285,9 @@ h1 {
 
 .hover-lift:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 /* CTA button animations */
@@ -316,7 +319,7 @@ h1 {
 
 /* Design System Background Patterns */
 .bg-grid-black {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
   background-size: 60px 60px;

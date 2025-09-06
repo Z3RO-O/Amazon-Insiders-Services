@@ -1,6 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Clock, MessageCircle, Menu, X, ShoppingCart, Settings, Send, Smartphone, CreditCard } from 'lucide-react';
+import {
+  Clock,
+  MessageCircle,
+  Menu,
+  X,
+  ShoppingCart,
+  Settings,
+  Send,
+  Smartphone,
+  CreditCard
+} from 'lucide-react';
 import { useState } from 'react';
 
 const Header = () => {
@@ -48,16 +58,19 @@ const Header = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Main navigation */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Button variant="ghost" asChild className="p-0 hover:bg-transparent">
-            <Link to="/" className="text-2xl font-bold text-black hover:text-gray-700 transition-colors duration-200">
+            <Link
+              to="/"
+              className="text-2xl font-bold text-black hover:text-gray-700 transition-colors duration-200"
+            >
               AMZ Insiders Services
             </Link>
           </Button>
-          
+
           <nav className="hidden lg:flex space-x-2">
             <Button variant="ghost" asChild>
               <Link to="/" className="flex items-center gap-2 group">
@@ -89,18 +102,23 @@ const Header = () => {
               Payment Mode
             </Button>
           </nav>
-          
+
           <div className="flex items-center gap-4">
             <Button
               className="hidden md:flex bg-black text-white hover:bg-gray-800 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               asChild
             >
-              <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a
+                href="https://wa.me/+18658880593"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
                 <MessageCircle className="w-4 h-4" />
                 Contact us
               </a>
             </Button>
-            
+
             {/* Mobile menu button */}
             <Button
               variant="ghost"
@@ -112,13 +130,13 @@ const Header = () => {
             </Button>
           </div>
         </div>
-        
+
         {/* Mobile menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-200 animate-fadeIn">
             <nav className="flex flex-col space-y-2 pt-4">
               <Button variant="ghost" asChild className="justify-start">
-                <Link 
+                <Link
                   to="/"
                   className="flex items-center gap-2"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -157,11 +175,13 @@ const Header = () => {
                   Payment Mode
                 </div>
               </Button>
-              <Button
-                className="mt-2 bg-black text-white hover:bg-gray-800"
-                asChild
-              >
-                <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button className="mt-2 bg-black text-white hover:bg-gray-800" asChild>
+                <a
+                  href="https://wa.me/+18658880593"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Contact us
                 </a>
               </Button>

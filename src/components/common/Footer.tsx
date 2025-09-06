@@ -4,7 +4,6 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-4">
       <div className="container mx-auto px-4">
-
         {/* Social Media Links */}
         <div className="text-center mb-4">
           <h4 className="text-lg font-semibold mb-6">Connect With Us</h4>

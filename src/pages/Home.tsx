@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { serviceCategories } from '@/data/services';
 import SnowEffect from '@/components/common/SnowEffect';
+import OrderForm from '@/components/common/OrderForm';
 import {
   Shield,
   Award,
@@ -14,7 +15,8 @@ import {
   ArrowRight,
   Sparkles,
   Clock,
-  MessageCircle
+  MessageCircle,
+  Target
 } from 'lucide-react';
 
 const Home = () => {
@@ -28,8 +30,11 @@ const Home = () => {
         {/* Animated background */}
         <div className="absolute inset-0 bg-gradient-to-r from-muted/30 to-muted/10 animate-gradient"></div>
         <div className="absolute top-10 left-10 w-72 h-72 bg-primary-foreground/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-muted/10 rounded-full blur-3xl animate-float" style={{animationDelay: '1s'}}></div>
-        
+        <div
+          className="absolute bottom-10 right-10 w-96 h-96 bg-muted/10 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: '1s' }}
+        ></div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -37,17 +42,17 @@ const Home = () => {
               Professional Amazon Services
               <Sparkles className="w-4 h-4" />
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               AMZ Insiders Services For Amazon Seller
             </h1>
-            
+
             <p className="text-xl mb-8 text-primary-foreground/80 leading-relaxed max-w-4xl mx-auto">
-              Comprehensive Amazon seller account services including aged accounts, fresh accounts, 
-              hack services, reviews, reports, and business growth solutions. Professional support 
+              Comprehensive Amazon seller account services including aged accounts, fresh accounts,
+              hack services, reviews, reports, and business growth solutions. Professional support
               for all your Amazon business needs.
             </p>
-            
+
             <div className="flex items-center justify-center gap-6 mb-8 flex-wrap">
               <div className="flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-2">
                 <CheckCircle className="h-4 w-4" />
@@ -62,7 +67,7 @@ const Home = () => {
                 <span className="text-sm font-medium">24/7 Support</span>
               </div>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
@@ -70,15 +75,20 @@ const Home = () => {
                 className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-4"
                 asChild
               >
-                <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a
+                  href="https://wa.me/+18658880593"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
                   <MessageCircle className="w-5 h-5" />
                   Get Started Now
                   <ArrowRight className="w-5 h-5" />
                 </a>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-4 bg-transparent"
                 asChild
               >
@@ -94,7 +104,10 @@ const Home = () => {
 
       {/* Service Categories */}
       {serviceCategories.map((category, categoryIndex) => (
-        <section key={category.id} className={`py-20 px-4 ${categoryIndex % 2 === 0 ? 'bg-gradient-to-b from-background to-muted/20' : 'bg-gradient-to-r from-muted/30 to-muted/10'}`}>
+        <section
+          key={category.id}
+          className={`py-20 px-4 ${categoryIndex % 2 === 0 ? 'bg-gradient-to-b from-background to-muted/20' : 'bg-gradient-to-r from-muted/30 to-muted/10'}`}
+        >
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
               <div className="flex items-center justify-center gap-3 mb-4">
@@ -107,15 +120,17 @@ const Home = () => {
                 {category.description}
               </p>
             </div>
-            
-            <div className={`grid gap-6 ${category.services.length === 1 ? 'grid-cols-1 justify-items-center max-w-md mx-auto' : category.services.length === 2 ? 'grid-cols-1 md:grid-cols-2 justify-items-center max-w-2xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
+
+            <div
+              className={`grid gap-6 ${category.services.length === 1 ? 'grid-cols-1 justify-items-center max-w-md mx-auto' : category.services.length === 2 ? 'grid-cols-1 md:grid-cols-2 justify-items-center max-w-2xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}
+            >
               {category.services.map((service, index) => {
                 const IconComponent = service.icon;
                 return (
-                  <Card 
-                    key={service.id} 
-                    className="h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:scale-[1.02] group animate-in fade-in-0 slide-in-from-bottom-4" 
-                    style={{animationDelay: `${index * 0.1}s`}}
+                  <Card
+                    key={service.id}
+                    className="h-full flex flex-col transition-all duration-300 hover:shadow-lg hover:scale-[1.02] group animate-in fade-in-0 slide-in-from-bottom-4"
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-3 mb-2">
@@ -133,20 +148,21 @@ const Home = () => {
                         )}
                       </div>
                     </CardHeader>
-                    
+
                     <CardContent className="flex-1 space-y-4">
                       <p className="text-sm text-muted-foreground leading-relaxed">
                         {service.description}
                       </p>
-                      
+
                       {service.advantage && (
                         <div className="p-3 bg-muted/50 rounded-lg border-l-4 border-primary">
                           <p className="text-sm text-primary">
-                            <span className="font-semibold">Key Advantage:</span> {service.advantage}
+                            <span className="font-semibold">Key Advantage:</span>{' '}
+                            {service.advantage}
                           </p>
                         </div>
                       )}
-                      
+
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <span className="font-bold text-primary">{service.price}</span>
@@ -156,13 +172,23 @@ const Home = () => {
                           <span className="text-sm">{service.timeframe}</span>
                         </div>
                       </div>
-                      
+
                       {service.guarantee && (
                         <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm border rounded-lg px-3 py-2">
                           <CheckCircle className="h-4 w-4 text-primary" />
-                          <span className="text-sm font-medium text-primary">{service.guarantee}</span>
+                          <span className="text-sm font-medium text-primary">
+                            {service.guarantee}
+                          </span>
                         </div>
                       )}
+
+                      <OrderForm serviceName={service.title} servicePrice={service.price}>
+                        <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold transition-all duration-300 hover:scale-105 cursor-pointer">
+                          <Target className="w-4 h-4" />
+                          Order Now
+                          <ArrowRight className="w-4 h-4" />
+                        </Button>
+                      </OrderForm>
                     </CardContent>
                   </Card>
                 );
@@ -206,7 +232,7 @@ const Home = () => {
               <p className="text-primary-foreground/80 font-medium">Partner Sellers</p>
             </div>
           </div>
-          
+
           <div className="text-center mt-16 animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-200">
             <p className="text-xl mb-8 text-primary-foreground/90">
               We work in partnership with all the <em className="font-semibold">Amazon sellers</em>
@@ -217,7 +243,12 @@ const Home = () => {
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-4"
               asChild
             >
-              <a href="https://wa.me/+18658880593" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a
+                href="https://wa.me/+18658880593"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
                 <MessageCircle className="w-5 h-5" />
                 Contact Us Now
                 <ArrowRight className="w-5 h-5" />

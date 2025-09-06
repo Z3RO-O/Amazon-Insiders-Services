@@ -1,9 +1,9 @@
-import { 
-  Settings, 
-  Target, 
-  Shield, 
-  Ban, 
-  Merge, 
+import {
+  Settings,
+  Target,
+  Shield,
+  Ban,
+  Merge,
   BarChart3,
   FileText,
   Search,
@@ -18,7 +18,7 @@ import {
   Briefcase,
   Award,
   Mail,
-  MapPin,
+  MapPin
 } from 'lucide-react';
 
 export interface ServiceItem {
@@ -51,7 +51,8 @@ export const amazonInternalServices: ServiceItem[] = [
   {
     id: 'internal-screenshots',
     title: 'Internal Screenshots of Suspended Account',
-    description: 'Get detailed internal screenshots of your suspended Amazon account to understand the suspension reasons and plan your reinstatement strategy.',
+    description:
+      'Get detailed internal screenshots of your suspended Amazon account to understand the suspension reasons and plan your reinstatement strategy.',
     price: '$180',
     timeframe: '1-2 days',
     icon: Eye,
@@ -61,7 +62,8 @@ export const amazonInternalServices: ServiceItem[] = [
   {
     id: 'customer-data-negative-review',
     title: 'Customer Data by Negative Review',
-    description: 'Obtain detailed customer information and data related to negative reviews to help you understand and address customer concerns.',
+    description:
+      'Obtain detailed customer information and data related to negative reviews to help you understand and address customer concerns.',
     price: 'Contact for pricing',
     timeframe: '2-3 days',
     icon: Database,
@@ -71,7 +73,8 @@ export const amazonInternalServices: ServiceItem[] = [
   {
     id: 'brand-name-change',
     title: 'Brand Name Change',
-    description: 'Professional brand name change service for your Amazon listings and account to rebrand your business effectively.',
+    description:
+      'Professional brand name change service for your Amazon listings and account to rebrand your business effectively.',
     price: '$400',
     timeframe: '3-5 days',
     icon: RefreshCw,
@@ -81,7 +84,8 @@ export const amazonInternalServices: ServiceItem[] = [
   {
     id: 'remap-asin',
     title: 'REMAPs of Activated and Non-activated Listing',
-    description: 'Remap your SKU to a completely new ASIN for both activated and non-activated listings to resolve various listing issues.',
+    description:
+      'Remap your SKU to a completely new ASIN for both activated and non-activated listings to resolve various listing issues.',
     price: '$200',
     timeframe: '1 day',
     icon: Target,
@@ -91,7 +95,8 @@ export const amazonInternalServices: ServiceItem[] = [
   {
     id: 'advertising-cpc',
     title: 'Advertising CPC Management',
-    description: 'Professional CPC advertising management and optimization to maximize your ad spend efficiency and ROI.',
+    description:
+      'Professional CPC advertising management and optimization to maximize your ad spend efficiency and ROI.',
     price: 'Contact for pricing',
     timeframe: 'Ongoing',
     icon: TrendingUp,
@@ -105,7 +110,8 @@ export const amazonInternalAdvancedServices: ServiceItem[] = [
   {
     id: 'remove-hijacker',
     title: 'Remove Hijacker',
-    description: 'Remove hijackers from your listings to maintain exclusive buy box control and protect your brand.',
+    description:
+      'Remove hijackers from your listings to maintain exclusive buy box control and protect your brand.',
     advantage: 'Own buy box exclusive',
     price: '$180',
     timeframe: '2 days',
@@ -117,7 +123,8 @@ export const amazonInternalAdvancedServices: ServiceItem[] = [
   {
     id: 'remap-asin-advanced',
     title: 'Remap ASIN',
-    description: 'Advanced ASIN remapping service to transfer your product to a new ASIN with better performance metrics.',
+    description:
+      'Advanced ASIN remapping service to transfer your product to a new ASIN with better performance metrics.',
     advantage: 'Remap SKU to a full new ASIN',
     price: '$200',
     timeframe: '1 day',
@@ -128,7 +135,8 @@ export const amazonInternalAdvancedServices: ServiceItem[] = [
   {
     id: 'block-asin',
     title: 'Block ASIN',
-    description: 'Block competitor ASINs when you receive attacks or need to protect your market position.',
+    description:
+      'Block competitor ASINs when you receive attacks or need to protect your market position.',
     advantage: 'Block competitors listing when you received attack',
     price: '$250',
     timeframe: '1-4 days',
@@ -139,7 +147,8 @@ export const amazonInternalAdvancedServices: ServiceItem[] = [
   {
     id: 'merge-review',
     title: 'Merge Review',
-    description: 'Merge reviews from different ASINs to increase your review count and improve product credibility.',
+    description:
+      'Merge reviews from different ASINs to increase your review count and improve product credibility.',
     advantage: 'Increase review number',
     price: '$4/per review',
     timeframe: '1 day',
@@ -150,7 +159,8 @@ export const amazonInternalAdvancedServices: ServiceItem[] = [
   {
     id: 'amazon-insurance',
     title: 'Amazon Insurance',
-    description: 'Comprehensive insurance coverage for your Amazon business to protect against various risks and losses.',
+    description:
+      'Comprehensive insurance coverage for your Amazon business to protect against various risks and losses.',
     price: 'Contact for pricing',
     timeframe: '5-7 days',
     icon: Shield,
@@ -160,7 +170,8 @@ export const amazonInternalAdvancedServices: ServiceItem[] = [
   {
     id: 'ppc-report',
     title: 'PPC Report',
-    description: 'Detailed PPC performance reports including clicks, spend, keywords, orders and comprehensive analysis.',
+    description:
+      'Detailed PPC performance reports including clicks, spend, keywords, orders and comprehensive analysis.',
     price: '$200',
     timeframe: '1-2 days',
     icon: BarChart3,
@@ -174,7 +185,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'verified-reviews',
     title: 'Amazon Verified Reviews',
-    description: 'Get genuine Amazon verified reviews from real customers to boost your product credibility and rankings.',
+    description:
+      'Get genuine Amazon verified reviews from real customers to boost your product credibility and rankings.',
     price: 'Part of $200 package',
     timeframe: '3-7 days',
     icon: Star,
@@ -185,7 +197,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'seller-feedback',
     title: 'Amazon Seller Feedback',
-    description: 'Improve your seller feedback score with genuine feedback from verified Amazon customers.',
+    description:
+      'Improve your seller feedback score with genuine feedback from verified Amazon customers.',
     price: 'Part of $200 package',
     timeframe: '3-7 days',
     icon: MessageSquare,
@@ -195,7 +208,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'keyword-search-purchase-review',
     title: 'Amazon Keyword Search & Purchase + Verified Review',
-    description: 'Complete service including keyword search, purchase, and verified review to boost organic rankings.',
+    description:
+      'Complete service including keyword search, purchase, and verified review to boost organic rankings.',
     price: '$200',
     timeframe: '5-10 days',
     icon: Search,
@@ -206,7 +220,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'amazon-votes',
     title: 'Amazon Votes (Helpful/Unhelpful)',
-    description: 'Get helpful or unhelpful votes on reviews to influence review rankings and visibility.',
+    description:
+      'Get helpful or unhelpful votes on reviews to influence review rankings and visibility.',
     price: 'Part of $200 package',
     timeframe: '2-5 days',
     icon: TrendingUp,
@@ -216,7 +231,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'qa-posting-votes',
     title: 'Amazon Q&A Posting and Q/A Votes',
-    description: 'Professional Q&A posting service with votes to improve product information and customer engagement.',
+    description:
+      'Professional Q&A posting service with votes to improve product information and customer engagement.',
     price: 'Contact for pricing',
     timeframe: '3-5 days',
     icon: MessageSquare,
@@ -226,7 +242,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'top-reviewer-vine',
     title: 'Review From Amazon Top 1000 Ranking Buyer Profile/Vine Buyer',
-    description: 'Get reviews from top-ranked Amazon reviewers and Vine members for maximum credibility.',
+    description:
+      'Get reviews from top-ranked Amazon reviewers and Vine members for maximum credibility.',
     price: 'Premium pricing - Contact us',
     timeframe: '7-14 days',
     icon: Award,
@@ -237,7 +254,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'negative-feedback-remove',
     title: 'Negative Feedback Remove',
-    description: 'Professional service to remove negative feedback and reviews that violate Amazon policies.',
+    description:
+      'Professional service to remove negative feedback and reviews that violate Amazon policies.',
     price: '$200',
     timeframe: '3-7 days',
     icon: RefreshCw,
@@ -247,7 +265,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'flipkart-review',
     title: 'Flipkart Review',
-    description: 'Professional review services for Flipkart marketplace to boost your product visibility.',
+    description:
+      'Professional review services for Flipkart marketplace to boost your product visibility.',
     price: 'Contact for pricing',
     timeframe: '5-7 days',
     icon: Star,
@@ -257,7 +276,8 @@ export const amazonReviewServices: ServiceItem[] = [
   {
     id: 'walmart-review',
     title: 'Walmart Review',
-    description: 'Professional review services for Walmart marketplace to improve your product rankings.',
+    description:
+      'Professional review services for Walmart marketplace to improve your product rankings.',
     price: 'Contact for pricing',
     timeframe: '5-7 days',
     icon: Star,
@@ -271,7 +291,8 @@ export const additionalServices: ServiceItem[] = [
   {
     id: 'withdraw-funds-blocked',
     title: 'Withdraw Funds by block Amazon/eBay/Walmart account',
-    description: 'Professional service to help withdraw detained funds from blocked Amazon, eBay, and Walmart accounts with secure processing.',
+    description:
+      'Professional service to help withdraw detained funds from blocked Amazon, eBay, and Walmart accounts with secure processing.',
     price: '25% of amount',
     timeframe: '1-2 weeks',
     icon: Shield,
@@ -282,7 +303,8 @@ export const additionalServices: ServiceItem[] = [
   {
     id: 'amazon-reinstate-service',
     title: 'Amazon Reinstate Service',
-    description: 'Professional Amazon account reinstatement service with high success rate and comprehensive appeal process.',
+    description:
+      'Professional Amazon account reinstatement service with high success rate and comprehensive appeal process.',
     price: '$350 - $600',
     priceRange: 'Based on complexity',
     timeframe: '5-10 days',
@@ -298,7 +320,8 @@ export const amazonReportsServices: ServiceItem[] = [
   {
     id: 'asin-reports',
     title: 'ASIN Reports (Sales, Volume, Ads)',
-    description: 'Comprehensive ASIN performance reports including sales data, sales volume, and advertising metrics.',
+    description:
+      'Comprehensive ASIN performance reports including sales data, sales volume, and advertising metrics.',
     price: '$100',
     timeframe: '1-2 days',
     icon: BarChart3,
@@ -308,7 +331,8 @@ export const amazonReportsServices: ServiceItem[] = [
   {
     id: 'ppc-detailed-report',
     title: 'PPC Detailed Report',
-    description: 'In-depth PPC analysis including clicks, spend, keywords, orders, and performance metrics.',
+    description:
+      'In-depth PPC analysis including clicks, spend, keywords, orders, and performance metrics.',
     price: '$200',
     timeframe: '1-2 days',
     icon: TrendingUp,
@@ -318,7 +342,8 @@ export const amazonReportsServices: ServiceItem[] = [
   {
     id: 'payment-reports',
     title: 'Payment Reports (City, State, Post)',
-    description: 'Detailed payment analysis by geographic location including city, state, and postal data.',
+    description:
+      'Detailed payment analysis by geographic location including city, state, and postal data.',
     price: '$200',
     timeframe: '2-3 days',
     icon: MapPin,
@@ -328,7 +353,8 @@ export const amazonReportsServices: ServiceItem[] = [
   {
     id: 'business-report-account',
     title: 'Business Report by Whole Account',
-    description: 'Comprehensive business performance report covering your entire Amazon account metrics.',
+    description:
+      'Comprehensive business performance report covering your entire Amazon account metrics.',
     price: '$200',
     timeframe: '2-3 days',
     icon: Briefcase,
@@ -338,7 +364,8 @@ export const amazonReportsServices: ServiceItem[] = [
   {
     id: 'internal-account-notes',
     title: 'Amazon Internal Account Notes',
-    description: 'Access to internal Amazon account notes and communications for better account understanding.',
+    description:
+      'Access to internal Amazon account notes and communications for better account understanding.',
     price: 'Contact for pricing',
     timeframe: '1-2 days',
     icon: FileText,
@@ -348,7 +375,8 @@ export const amazonReportsServices: ServiceItem[] = [
   {
     id: 'real-email-order-id',
     title: 'Real Email with Order ID (Exact Buyer Information)',
-    description: 'Get exact buyer information including real email addresses and order IDs for customer outreach.',
+    description:
+      'Get exact buyer information including real email addresses and order IDs for customer outreach.',
     price: 'Contact for pricing',
     timeframe: '1-2 days',
     icon: Mail,
@@ -362,7 +390,8 @@ export const ebayServices: ServiceItem[] = [
   {
     id: 'ebay-mc011',
     title: 'eBay MC011 Suspension Reinstatement',
-    description: 'Professional reinstatement service for eBay MC011 suspensions with high success rate.',
+    description:
+      'Professional reinstatement service for eBay MC011 suspensions with high success rate.',
     price: '$400 - $600',
     priceRange: 'Based on complexity',
     timeframe: '5-10 days',
@@ -384,7 +413,8 @@ export const ebayServices: ServiceItem[] = [
   {
     id: 'ebay-indefinite',
     title: 'eBay Indefinite Suspension',
-    description: 'Specialized service for indefinite eBay suspensions requiring extensive documentation.',
+    description:
+      'Specialized service for indefinite eBay suspensions requiring extensive documentation.',
     price: '$400 - $600',
     priceRange: 'Based on complexity',
     timeframe: '10-21 days',
@@ -449,7 +479,8 @@ export const ebayServices: ServiceItem[] = [
   {
     id: 'ebay-defects-removal',
     title: 'eBay Defects Removal',
-    description: 'Professional removal of defects from your eBay seller account to improve performance.',
+    description:
+      'Professional removal of defects from your eBay seller account to improve performance.',
     price: '$200',
     timeframe: '5-7 days',
     icon: CheckCircle,
@@ -465,7 +496,12 @@ export const serviceCategories: ServiceCategory[] = [
     title: 'Amazon Internal Services',
     description: 'Advanced internal Amazon services for account management and optimization',
     icon: Settings,
-    services: [...amazonInternalServices, ...amazonInternalAdvancedServices, ...additionalServices, ...amazonReportsServices.filter(s => s.category === 'amazon-internal')]
+    services: [
+      ...amazonInternalServices,
+      ...amazonInternalAdvancedServices,
+      ...additionalServices,
+      ...amazonReportsServices.filter((s) => s.category === 'amazon-internal')
+    ]
   },
   {
     id: 'amazon-reviews',
@@ -479,7 +515,7 @@ export const serviceCategories: ServiceCategory[] = [
     title: 'Amazon Reports & Analytics',
     description: 'Detailed reporting and analytics services for data-driven decisions',
     icon: BarChart3,
-    services: amazonReportsServices.filter(s => s.category === 'amazon-reports')
+    services: amazonReportsServices.filter((s) => s.category === 'amazon-reports')
   },
   {
     id: 'ebay',
@@ -501,7 +537,7 @@ export const allServices: ServiceItem[] = [
 ];
 
 // Featured services
-export const featuredServices: ServiceItem[] = allServices.filter(service => service.featured);
+export const featuredServices: ServiceItem[] = allServices.filter((service) => service.featured);
 
 // Payment support information
 export const paymentSupport = {
