@@ -88,6 +88,7 @@ To run this project on your local machine, follow these steps:
    ```
 
 2. Install dependencies:
+
    ```
    npm install
    ```
@@ -115,6 +116,7 @@ To run this project on your local machine, follow these steps:
   ```
 
 - Run linting:
+
   ```
   npm run lint
   ```
@@ -124,3 +126,7 @@ To run this project on your local machine, follow these steps:
 This project uses Vite for fast development with HMR. It includes ESLint for code quality. For expanding the ESLint configuration, refer to the original Vite template documentation.
 
 If you encounter any issues, ensure your Node.js version is compatible and try deleting `node_modules` and reinstalling.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
